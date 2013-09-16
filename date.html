@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> date</title>
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  <script type='text/javascript' src="http://code.jquery.com/jquery.min.js"></script>
+  <script type='text/javascript' src="http://twitter.github.io/bootstrap/assets/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css">
+  <script type='text/javascript' src="http://www.eyecon.ro/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://www.eyecon.ro/bootstrap-datepicker/css/datepicker.css">
+<script type='text/javascript'>//<![CDATA[ 
+window.onload=function(){
+ 
+var checkin = $('#dpFrom').datepicker().on('changeDate', function(ev) {
+    var newDate = new Date(ev.date)
+    newDate.setDate(newDate.getDate());
+    checkout.setValue(newDate);
+	checkin.hide();
+  $('#dpTo')[0].focus();
+}).data('datepicker');
+var checkout = $('#dpTo').datepicker({
+  onRender: function(date) {
+    return date.valueOf() < checkin.date.valueOf() ? 'disabled' : '';
+  }
+}).on('changeDate', function(ev) {
+  checkout.hide();
+}).data('datepicker');
+}//]]>  
+
+</script>
+
+
+</head>
+<body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Authentication Required</a>
+	<form class="navbar-form pull-right">
+		<fieldset action="j_spring_openid_security_check" method="post">
+			<input name="openid_identifier" type="hidden" value="https://www.google.com/accounts/o8/id" />
+			<button type="submit" class="btn btn-primary">Logout</button>
+		</fieldset>
+	</form>
+  </div>
+</div>
+<div class="bs-docs-grid">
+	<div class="row show-grid">
+		<div class="span10 offset1"><p>Dummy</p></div>
+		<div class="span10 offset1">
+			<div class="bs-docs-example">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active"><a href="#apply" data-toggle="tab">Apply</a></li>
+					<li><a href="#approve" data-toggle="tab">Approve</a></li>
+					<li><a href="#view" data-toggle="tab">View</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="apply">
+						<form class="form-horizontal">
+							<div class="control-group">
+								<label class="control-label" for="from">Leave From Date</label>
+								<div class="controls">
+									<div class="input-append date" id="dpFrom" data-date="" data-date-format="dd-mm-yyyy">
+										<input size="16" type="text" name="from" value="" readonly="">
+										<span class="add-on"><i class="icon-calendar"></i></span>
+									</div>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="to">Leave To Date</label>
+								<div class="controls">
+									<div class="input-append date" id="dpTo" data-date="" data-date-format="dd-mm-yyyy">
+										<input size="16" type="text" name="to" value="" readonly="">
+										<span class="add-on"><i class="icon-calendar"></i></span>
+									</div>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="reason">Reason for the leave</label>
+								<div class="controls">
+									<textarea rows="3" id="reason" placeholder="Reason"></textarea>
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<button type="submit" class="btn">Apply</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane fade" id="approve">
+						<p>Approve leaves here.</p>
+					</div>
+					<div class="tab-pane fade" id="view">
+						<p>View leaves here.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+

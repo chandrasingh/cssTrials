@@ -1,0 +1,77 @@
+.colearnMainContent {
+	height: 600px;
+	margin-top: 0;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+	border-color: #cccccc;
+	background-color: #FFFFFF;
+}
+.main {
+	background-color: #D5F2FF;
+	margin-top: 10px;
+}
+.tabContainer {
+	background-color: #D5F2FF;
+	margin-bottom: 0px;
+}
+.content {
+	margin: 15px;
+}
+.tabContainer > .active > a {
+	padding-bottom: 15px;
+	padding-top: 15px;
+	color: #000000;
+	font-weight: 800;
+}
+.tabContainer > li > a {
+	padding-bottom: 15px;
+	padding-top: 15px;
+	color: #000000;
+	font-weight: 800;
+}
+
+.tabContainer > li > a:hover {
+	background-color: inherit;
+}
+
+.logo {
+	display: inline-block;
+	float: left;
+}
+
+.logo .header {
+	font-weight: 900;
+	font-size: xx-large;
+	color: #473725;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.logo p {
+	font-weight: 100;
+	color: #CC972c;
+	font-size: xx-small;
+	margin-right: 10px;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.topControls {
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: -9px;
+}
+			
+
+.coLearnFormSearch{
+	boder-radius: 0;
+	
+}
+
+.coLearnFormSearch .input-append .btn {
+	background-color: transparent;
+	background-image: none;
+}
+

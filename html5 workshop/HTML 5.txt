@@ -1,0 +1,64 @@
+HTML 5
+BY OLI STUDHOLME
+HTML5 structure—div, section & article
+It seems my HTML5 id/class name cheatsheet article interested a few people, so here’s the start of an in-depth look at the document structures that fall out of the HTML5 spec. First, let’s introduce three easily confused HTML5 structural elements:
+1. <div>—the generic flow container we all know and love. It’s a block-level element with no additional semantic meaning (W3C:Markup, WhatWG)
+2. <section>—a generic document or application section. A <section> normally has a heading (title) and maybe a footer too. It’s a chunk of related content, like a subsection of a long article, a major part of the page (eg the news section on the homepage), or a page in a webapp’s tabbed interface. (W3C:Markup, WhatWG)
+3. <article>—an an independent part of a document or site. This means it should be able to ‘stand alone’, and still make sense if you encountered it somewhere else (eg in an RSS feed). Examples include a weblog article (duh), a forum post or a comment. Like <section> these generally have a header, and maybe a footer (W3C:HTML, WhatWG)
+The difference between <div>, <section> and <article>
+In writing semantic HTML we should use the most suitable or semantically accurate element. In HTML4 <div> is a general block-level container element; it doesn’t have any semantic meaning beyond being block-level, and is used when there are no more appropriate elements (ie all the time). There is no requirement for the things inside the <div> to be related to each other.
+The new HTML5 <section> element is similar to <div> as a general container element, but it *does* have some semantic meaning—the things it contains are a logical group of related content:
+The section element represents a generic document or application section. A section, in this context, is a thematic grouping of content, typically with a header, possibly with a footer.
+It is also a ‘sectioning content’ element. Along with <article>, <nav> and <aside>, it indicates a new section in the document. Imagine making your page into a bulleted list of related parts—sectioning elements create a new bullet point in the page’s outline, with indentation reflecting nesting. Note <div> isn’t a sectioning element.
+The new HTML5 <article> element is like a specialised kind of <section>; it has a more specific semantic meaning in that it is an independent, self-contained part of the page. We could use <section>, but using <article> gives more semantic meaning.
+To think about HTML4, we can compare this (kind of ;-) to <p> and <blockquote>. Both are block-level elements for text, but using <blockquote> gives more semantic meaning (this is a block of quoted text). The same with <section> and <article>; <section> means related content, but <article> means one piece of related content which makes sense on it’s own, even outside the context of the page (the page’s header and footer etc).
+The potentially confusing part of this is that <section> can be used for parts of a page (eg the main content column, the news section on a homepage) and contain <article>s, and also for sections of a long <article> (ie inside an <article>).
+To decide which of these three elements is appropriate, first think if the enclosed content would make sense on it’s own in a feed reader—if so use <article>. If that’s not the case, is the enclosed content related? If so use <section>.  Finally if there’s no semantic meaning use <div>. Except for occasional use to provide a hook for styles, I expect the humble <div> will mostly be superseded by <section>, and where required more specialised HTML5 elements.
+We use <section> and <article> just like <div> is used in HTML4—eg these elements can’t be used inside <blockquote> or <address>. Also avoid nesting an <article> inside another <article>—use <section> for indicating logical parts of an <article> instead.
+Document structures
+Let’s describe some common document structures as bulleted lists:
+A weblog article
+* Weblog article
+o Title
+o Content…
+In HTML4 we’d most probably wrap the article in a <div>. Obviously we should use <article> instead in HTML5.
+A long article with subsections (like a thesis)
+* Article
+o Title
+o Content
+1. Subsection
+* Subtitle (section title)
+* Content
+2. Subsection
+* Subtitle (section title)
+* Content
+3. Subsection
+* Subtitle (section title)
+* Content
+Again the article would generally be wrapped in a <div> in HTML4, and the subsections would only be suggested by <h1>-<h6> elements. In HTML5 the article should be wrapped in <article>, and the subsections of the <article> should be explicitly indicated by wrapping them in <section> elements, perhaps in ordered list items if you’d like section numbering.
+A weblog homepage
+* Weblog header
+* Logo
+* Search
+* …
+* Site navigation
+* Main content
+1. Weblog article
+* Title
+* Summary
+2. Weblog article
+* Title
+* Summary
+3. Weblog article
+* Title
+* Summary
+* Secondary content
+* Blogroll, photos, other content…
+* Footer
+All the main block-level sections of this structure would generally be <div>s in HTML4. Using our pieces from above, in HTML5 the <article>s should all be inside one <section> (for main content), with the secondary content also inside a <section>. Any independent (‘can stand alone’) chunk of content in the secondary content might also be marked up with an <article>. Note that the semantically hardcore might consider choosing to wrap the list of articles in <ol> list items if they are sorted by date, which articles on weblog homepages normally are :)
+However <section> and <article> aren’t all the new structural tags! Stay tuned to see what becomes of the header, navigation and footer.
+Browser Support
+ElementIESafariMozilla FFchromeDivSupported in all browsersSectionIE9+Safari 5+FF 9+Chrome 13+Article
+Changes:
+2009-06-30 Added sectioning content link and improved explanation
+2009-07-02 Improved explanation of nested articles 

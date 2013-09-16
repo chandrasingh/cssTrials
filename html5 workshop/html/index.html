@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>My Application</title>
+
+  <meta name="keyword" content="application, my, email">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <meta name="description" content="The head tag contains the title and meta tags - important to the search engines, and information for the browser to properly display the page.">
+
+  <link href="styles/style.css" rel="stylesheet"/>
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+Modernizr enables HTML5 elements & feature detects for optimal performance.
+Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+
+<!--login dialog-->
+<div id="overlay">
+  <section id="login-dialog" class="dialog">
+    <h4>Login</h4>
+    <form>
+      <p>Please enter username password</p>
+      <fieldset>
+        <p>
+          <input type="text" placeholder="Email or username" />
+          <span class="note">Enter email or username</span>
+        </p>
+
+        <p><input type="password" placeholder="Password" /></p>
+        <p><label class="small"><input type="checkbox" /> Remember me</label></p>
+      </fieldset>
+
+    </form>
+    <div class="btns">
+      <input type="button" class="btn-secondary" value="Cancel" />
+      <input type="button" class="btn-primary" value="Login" />
+    </div>
+  </section>
+</div>
+
+<!--main body-->
+<div id="content">
+  <header id="main-header">
+    <hgroup>
+      <h1><span class="logo"></span> My Email App</h1>
+      <h2>a new way to interact</h2>
+    </hgroup>
+    <nav>
+      <ul>
+        <li><a href="#">My Home</a></li>
+        <li><a href="#">Sign out</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main-content">
+    <nav id="main-left-container">
+      <ul>
+        <li><span class="icon"></span><a href="#">Inbox</a></li>
+        <li><span class="icon"></span><a href="#">Sent</a></li>
+        <li><span class="icon"></span><a href="#">Trash</a></li>
+        <li><span class="icon"></span><a href="#">Spam</a></li>
+      </ul>
+    </nav>
+    <section id="main-content-container">
+      <!-- toolbar-->
+      <header class="toolbar">
+        <input type="button" value="new" class="btn-secondary"/>
+        <input type="button" value="reply" class="btn-secondary"/>
+        <input type="button" value="forward" class="btn-secondary"/>
+        <input type="button" value="delete" class="btn-secondary"/>
+      </header>
+      <div id="loader-container">
+        <div id="loader">
+          <div id="front-barG" class="bar-animationG">
+            <div id="barG_1" class="bar-lineG">
+            </div>
+            <div id="barG_2" class="bar-lineG">
+            </div>
+            <div id="barG_3" class="bar-lineG">
+            </div>
+          </div>
+        </div>
+        Loading messages
+      </div>
+      <!-- messages-->
+      <ol class="messages">
+        <li>
+        <article>
+          <h2>some message</h2>
+          <p>content of the message</p>
+        </article>
+        </li>
+        <li>
+        <article>
+          <h2>some message</h2>
+          <p>content of the message</p>
+        </article>
+        </li>
+        <li>
+        <article>
+          <h2>some message</h2>
+          <p>content of the message</p>
+        </article>
+        </li>
+        <li>
+        <article>
+          <h2>some message</h2>
+          <p>content of the message</p>
+        </article>
+        </li>
+        <li>
+        <article>
+          <h2>some message</h2>
+          <p>content of the message</p>
+        </article>
+        </li>
+        <li>
+        <article>
+          <h2>some message</h2>
+          <p>content of the message</p>
+        </article>
+        </li>
+      </ol>
+
+    </section>
+    <aside id="main-right-container">
+      <div class="ad">Some Ad</div>
+      <div class="ad">Some Ad</div>
+    </aside>
+  </div>
+  <footer id="main-footer">
+
+  </footer>
+</div>
+
+
+
+</body>
+</html>

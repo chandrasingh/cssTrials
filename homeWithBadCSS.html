@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CoLearn</title>
+		<link href="resources/css/bootstrap.css" rel="stylesheet">
+		<link href="resources/css/bootstrap-responsive.css" rel="stylesheet">
+		<style>
+			.colearnMainContent {
+				height: 600px;
+				margin-top: 0;
+				border-left: 1px solid;
+				border-right: 1px solid;
+				border-bottom: 1px solid;
+				border-color: #cccccc;
+				background-color: #FFFFFF;
+			}
+			.main {
+				background-color: #D5F2FF;
+			}
+			.tabContainer {
+				background-color: #D5F2FF;
+				margin-bottom: 0px;
+			}
+			.content {
+				margin: 15px;
+			}
+			.tabContainer > .active > a {
+				padding-bottom: 15px;
+				padding-top: 15px;
+				color: #000000;
+				font-weight: 800;
+			}
+			.tabContainer > li > a {
+				padding-bottom: 15px;
+				padding-top: 15px;
+				color: #000000;
+				font-weight: 800;
+			}
+			.tabContainer > li > div {
+				margin-left: 5px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				color: #000000;
+				font-weight: 800;
+			}
+			.tabContainer > li > form {
+				margin-left: 5px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				color: #000000;
+				font-weight: 800;
+			}
+			
+			logo {
+				display: inline-block;
+			}
+			
+			logo .header{
+				font-weight: 900;
+				font-size: xx-large;
+				color: #473725;
+				margin-right: 10px;
+				margin-top: 10px;
+			}
+
+			logo  p {
+				font-weight: 100;
+				color: #CC972c;
+				font-size: xx-small;
+				margin-right: 10px;
+ 				margin-bottom: 0;
+ 				text-align: center;
+			}
+	
+		</style>
+		<script type='text/javascript'></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body class="main">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span10 offset1">
+					<div class="tabbable">
+						<ul class="nav nav-tabs tabContainer" >
+							<li>
+								<logo>
+									<p class="header">CoLearn</p>
+									<p>b'cos learning can also be fun</p>
+								</logo>
+							</li>
+							<li class="active">
+								<a href="#pane1" data-toggle="tab">What We Do</a>
+							</li>
+							<li>
+								<a href="#pane2" data-toggle="tab">How We Do</a>
+							</li>
+							<li>
+								<div>
+									<button type="button" class="btn btn-primary" data-loading-text="Loading...">
+										Sign up Its Free!
+									</button>
+								</div>
+							</li>
+							<li>
+								<div>
+									<button type="button" class="btn btn-inverse" data-loading-text="Loading...">
+										Login
+									</button>
+								</div>
+							</li>
+							<li>
+								<form class="form-search" >
+									<div class="input-append">
+										<input type="text" class="search-query">
+										<button type="submit" class="btn">
+											<i class="icon-search"></i>
+										</button>
+									</div>
+								</form>
+							</li>
+						</ul>
+						<div class="colearnMainContent">
+							<div class="tab-content">
+								<div id="pane1" class="tab-pane active content">
+									<h4>What We Do</h4>
+								</div>
+								<div id="pane2" class="tab-pane content">
+									<h4>How We Do</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="resources/js/jquery.min.js"></script>
+		<script src="resources/js/bootstrap.min.js"></script>
+	</body>
+</html>
